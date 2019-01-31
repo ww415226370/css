@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	.accordionMenu {
+		font: 12px Arial, Verdana, sans-serif;
+		color:#424242;
+		background: #fff;
+		padding: 10px;
+		width: 500px;
+		margin:0 auto;
+	}
+	.accordionMenu h2 {
+		margin:5px 0;
+		padding:0;
+		position: relative;
+	}
+	.accordionMenu h2:before {
+		content:"";
+		border: 5px solid #fff;
+		border-color: #fff transparent transparent;
+		width: 0;
+		height: 0;
+		position:absolute;
+		right: 10px;
+		top: 15px;
+	} 
+	.accordionMenu h2 a {
+		font-size: 13px;
+		display: block;
+		font-weight: normal;
+		color:#424242;
+		text-shadow: 2px 2px 2px #aeaeae;
+		text-decoration:none;
+		margin:0;
+		padding:10px 10px;
+		background: #8f8f8f;
+		background: -moz-linear-gradient( top, #cecece, #8f8f8f); 
+		background: -webkit-gradient(linear, left top, left bottom, from(#cecece), to(#8f8f8f)); 
+		background: -webkit-linear-gradient( top, #cecece, #8f8f8f); 
+		background: -o-linear-gradient( top, #cecece, #8f8f8f); 
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcecece, endColorstr=#ff8f8f8f); 
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcecece, endColorstr=#f8f8f8f)"; 
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
+	.accordionMenu :target h2 a,
+	.accordionMenu h2 a:focus,
+	.accordionMenu h2 a:hover,
+	.accordionMenu h2 a:active {
+		background: #2288dd;
+		background: -moz-linear-gradient( top, #6bb2ff, #2288dd);
+		background: -webkit-gradient(linear, left top, left bottom, from(#6bb2ff), to(#2288dd));
+		background: -webkit-linear-gradient( top, #6bb2ff, #2288dd);
+		background: -o-linear-gradient( top, #6bb2ff, #2288dd);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff6bb2ff, endColorstr=#ff2288dd);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff6bb2ff, endColorstr=#ff2288dd)";
+		color:#FFF;
+	}
+	.accordionMenu p {
+		padding:0 10px;
+		margin:0;
+		height: 0;
+		overflow: hidden;
+		-moz-transition: height 0.5s ease-in;
+		-webkit-transition: height 0.5s ease-in;
+		-o-transition: height 0.5s ease-in;
+		transition: height 0.5s ease-in;
+	}
+	.accordionMenu :target p {
+		overflow: auto;
+		height:100px;
+	}
+	.accordionMenu :target h2:before {
+		border-color: transparent transparent transparent #fff;
+	}
+	.cricle {
+		border: 5px solid red;
+		border-color: red transparent transparent;
+		width: 0;
+		height: 0;
+		position:absolute;
+		right: 10px;
+		top: 15px;
+	}
+</style>
+<body>
+<div id="cssTabs">
+	<div class="accordionMenu">
+		<div class="menuSection" id="brand">
+			<h2><a href="#brand">Brand</a></h2>
+			<p>content for Brand</p>
+		</div>
+		<div class="menuSection" id="promotion">
+			<h2><a href="#promotion">Promotion</a></h2>
+			<p>content for promotion</p>
+		</div>
+		<div class="menuSection" id="event">
+			<h2><a href="#event">Event</a></h2>
+			<p>content for Event</p>
+		</div>
+	</div>
+	<div class="cricle"></div>
+</div>
+</body>
+</html>

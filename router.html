@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<ul>
+	<div id="view"></div>
+</ul>
+</body>
+<script type="text/javascript">
+	function a() {
+		return new Promise(resolve => {
+			setTimeout(() => {
+				console.log(1);
+				resolve(1);
+			},1000)
+		});
+	}
+
+	function b() {
+		return new Promise(resolve => {
+			setTimeout(() => {
+				console.log(2);
+				resolve(2);
+			},1000)
+		});
+	}
+
+
+	function* c(){
+		let aa = yield a();
+		let bb = yield b();
+	}
+
+
+	function run(gen){
+	  var g = gen();
+
+	  function next(data){
+	    var result = g.next(data);
+	    console.log(result.value)
+	    if (result.done) return result.value;
+	    result.value.then(function(data){
+	      next(data);
+	    });
+	  }
+
+	  next();
+	}
+
+	run(c)
+	
+
+
+</script>
+<script type="text/html" id='home'>
+	<h1>home</h1>
+</script>
+<script type="text/html" id='template1'>
+	<h1>home</h1>
+	<span><%= heading %></span>
+</script>
+<script type="text/html" id='template2'>
+	<h1>home</h1>
+	<span><%= heading %></span>
+</script>
+</html>
